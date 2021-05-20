@@ -9,6 +9,7 @@
  * @mainpage UCI IGV 2020 - 2021
  * @authors Orion Serup (Lead Dev)
  * @authors Gabriel Enciso (Team Lead)
+ * @authors 
  * 
  * This Project is the UCI Intelligent Vehicle Project
  * for the Intelligent Vehicle Competition.
@@ -20,6 +21,8 @@
  * The Project is in partnership with Northrup Grummon.
  * 
  * @ref Contributions
+ * 
+ * @ref Dependecies
  * 
  */
 
@@ -34,6 +37,14 @@
  * For the GPS Library: mikalhart.
  * 
  * For OpenCV: The OpenCV team (opencv).
+ */
+
+/**
+ * @page Dependencies
+ * @brief All of the Project Dependecies
+ * 
+ * Cuda Toolkit From Nvidia, or OpenCl/Vulkan Depending on the Platform
+ * 
  */
 
 #pragma once
@@ -74,18 +85,33 @@ public:
   void Run();
 
   /**
-   * @brief 
-   * 
-   *
+   * @brief Detects Objects
+   * @param igv Pointer to an IGV instance
    */
   friend void ObjDetection(IGV* igv);
 
+  /**
+   * @brief Detects Lanes using the Land Detector in the IGV
+   * @param  igv: Pointer to IGV to use
+   */
   friend void LaneDetection(IGV* igv);
   
+  /**
+   * @brief Probes the LIDAR
+   * @param  igv: Pointer to IGV to use
+   */
   friend void LidarLoop(IGV* igv);
   
+  /**
+   * @brief  Probes the GPS 
+   * @param  igv: Pointer to vehicle to use
+   */
   friend void GPSLoop(IGV* igv);
   
+  /**
+   * @brief Probes all of the misc sensors  
+   * @param  igv: Pointer to vehicle to use
+   */
   friend void SensorLoop(IGV* igv);
 
 private:

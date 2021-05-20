@@ -83,11 +83,11 @@ public:
   * @brief Checks if the GPS is busy probing
   * @returns bool: If the GPS is busy with an operation
   */
-  bool isBusy(){ return busy; }
+  bool isBusy() const { return busy; }
   
 private:
 
-  TinyGPSPlus gps;
+  TinyGPSPlus gps; 
   double CurrLat, CurrLong;
   bool busy;
 
