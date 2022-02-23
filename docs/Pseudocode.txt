@@ -21,6 +21,27 @@ course with objects, avoid objects -> be within line
 if no lines, go to gps coordinates
 depth sensing camera to detect objects 
 
+Control Loop:
+    if Battery Level is below 50%
+        increase speed to make constant speed
+    if battery level is below 25%
+        increase speed even more
+    if Incline level is above 2%
+        Increase speed
+    if decline level is above 2%
+        decrease speed
+Object Detection:
+    if sensor sees 2 objects
+        if distance between two objects is greater than vehicle_width
+            steer vehicle in between objects
+    if sensor sees only 1 object
+        steer vehicle away from object
+    if sensor sees 3+ objects
+        find distance between objects and compare with vehicle_width
+            steer vehicle in between the 2 objects with greatest distance
+    
+         
+
 Tasks:
 standard line detection -Landon
 object detection - William
