@@ -13,7 +13,16 @@ hello -landon
 
 every so often read sensors, check battery
 
-speed min, speed max
+speed min, speed max -> stay as close to max speed
 Part of course with line
-part of course with no line
-course with objects, avoid objects
+part of course with no line -> cone hides gps module, go toward cone coordinates
+course with objects, avoid objects -> be within line 
+
+if no lines, go to gps coordinates
+depth sensing camera to detect objects 
+
+Tasks:
+standard line detection -Landon
+object detection - William
+cone gps -Landon
+Sensor status, battery check, speed regulation (Control) - William
