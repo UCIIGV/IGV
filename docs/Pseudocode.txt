@@ -3,13 +3,6 @@
 Navigation Loop:
 
     Read Speed from Accelerometer...
-wdawdawdawfsefisnef
-aeaewawdawdawdaw
-hellooooooooooooooo - will
-hello -landon
-..
-
-
 
 every so often read sensors, check battery
 
@@ -39,11 +32,33 @@ Object Detection:
     if sensor sees 3+ objects
         find distance between objects and compare with vehicle_width
             steer vehicle in between the 2 objects with greatest distance
-    
+           
+Line Detection:
+    Read line data from camera
+    if both lines are equidistant from center of camera && lines veer straight ahead
+        steer straight
+    if right line is close to vehicle 
+        steer left 
+    if left line is close to vehicle
+        steer right
+    if right line curves left and distance from right line is X
+        steer left
+    if left line curves right and distance from left line is X
+        steer right   
+Cone Tracking:
+    Read cone coordinates
+    Read vehicle gps coordinates
+    Read line data from camera 
+    Read object detection from depth sensor
+    if object is detected && close enough to vehicle
+        steer away from object 
+    else
+    if vehicle_x_coordinate is right of cone_x_coordinate
+        steer left 
+    if vehicle_x_coordinate is left of cone_x_coordinate
+        steer right
+    if vehicle_x_coordinate = cone_x_coordinate  
+        steer straight
+    if lines are detected && close enough to vehicle
+        end cone tracking
          
-
-Tasks:
-standard line detection -Landon
-object detection - William
-cone gps -Landon
-Sensor status, battery check, speed regulation (Control) - William
